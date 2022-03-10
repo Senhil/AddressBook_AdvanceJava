@@ -9,6 +9,11 @@ public class AddressBookMain
     static Scanner scan = new Scanner(System.in);
     public static void main( String[] args )
     {
+
+        System.out.println("Welcome To Address Book Program ");
+        AddressBook addressBook=new AddressBook();
+        addressBook.operation();
+
         System.out.println( "WELCOME TO ADDREES BOOK PROGRAM" );
         Map<String, AddressBook> map = new HashMap<>();
         System.out.println("Enter Number of address book you want to add");
@@ -23,5 +28,6 @@ public class AddressBookMain
             i++;
         }
         System.out.println(map);
+
     }
 }

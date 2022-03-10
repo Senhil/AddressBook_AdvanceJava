@@ -6,7 +6,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AddressBook {
+
+
     public List<Contacts> list = new ArrayList<>();
+
     Scanner scan = new Scanner(System.in);
 
     public void operation() {
@@ -122,6 +125,8 @@ public class AddressBook {
         }
     }
 
+
+
     public void delete() {
         System.out.println("Enter your First name:");
         String firstName = scan.next();
@@ -135,6 +140,7 @@ public class AddressBook {
             }
         }
     }
+
 
     public void print() {
         Iterator<Contacts> it = list.iterator();
