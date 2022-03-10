@@ -6,22 +6,42 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AddressBook {
+
+
+    public List<Contacts> list = new ArrayList<>();
+
     Scanner scan = new Scanner(System.in);
-    private final List<Contacts> list = new ArrayList<>();
 
     public void operation() {
+        System.out.println("Enter Number of contact you want to add");
+        int count = scan.nextInt();
+        int contactCount = 1;
+        while (contactCount <= count) {
+
+            this.add();
+            contactCount++;
+        }
         boolean status = true;
         do {
             System.out.println("Enter the number according to to requirment");
             System.out.println("Enter 1 to Add");
+            System.out.println("Enter 2 to Edit");
+            System.out.println("Enter 3 to Delete");
             switch (scan.nextInt()) {
                 case 1:
                     add();
                     break;
+                case 2:
+                    edit();
+                    break;
+                case 3:
+                    delete();
+                    break;
+                default:
+                    status = false;
             }
         } while (status);
     }
-
     public void add() {
         Contacts contacts = new Contacts();
         System.out.println("Enter the First name:");
@@ -104,6 +124,23 @@ public class AddressBook {
             }
         }
     }
+
+
+
+    public void delete() {
+        System.out.println("Enter your First name:");
+        String firstName = scan.next();
+
+        Iterator<Contacts> iterator = list.listIterator();
+        while (iterator.hasNext()) {
+            Contacts contacts = iterator.next();
+
+            if (firstName.equals(contacts.getFirstName())) {
+                list.remove(contacts);
+            }
+        }
+    }
+
 
     public void print() {
         Iterator<Contacts> it = list.iterator();
