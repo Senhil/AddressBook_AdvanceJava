@@ -60,7 +60,6 @@ public class AddressBook
         print();
 
     }
-
     public void print() {
         Iterator<Contacts> it = list.iterator();
         while (it.hasNext()) {
